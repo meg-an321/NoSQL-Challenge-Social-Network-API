@@ -1,31 +1,50 @@
-const usernames =
-[
-    'admin',
-    'user1',
-    'user2',
-    'user3',
-    'user4',
-    'user5',
+const initialUserData = [
+	  {
+		username: 'user1',
+		email: 'user1@example.com',
+	  },
+	  {
+		username: 'user2',
+		email: 'user2@example.com',
+	  },
+	  {
+		username: 'user3',
+		email: 'user3@example.com',
+	  },
 ];
 
-const emails =
-[
-    'hello@gmail.com',
-    'goodbye@gmail.com',
-    'goodevening@yahoo.com',
-    'goodnight@yahoo.com',
-    'gooday@yahoo.com',
-    'afternoon@hotmail.com',
+const initialThoughtData = [
+	  {
+		thoughtText: 'This is the first thought!',
+		username: 'user1',
+	  },
+	  {
+		thoughtText: 'This is the second thought	!',
+		username: 'user2',
+	  },
+	  {
+		thoughtText: 'This is the third thought!',
+		username: 'user3',
+	  },
 ];
 
-const thoughts =
-[
-    'I am happy',
-    'I am sad',
-    'I am angry',
-    'I am frustrated',
-    'I am confused',
-    'I am tired',
+const initialReactionData = [
+	  {
+		reactionBody: 'This is the first reaction!',
+		username: 'user2',
+	  },
+	  {
+		reactionBody: 'This is the second reaction!',
+		username: 'user3',
+	  },
+	  {	
+		reactionBody: 'This is the third reaction!',
+		username: 'user1',
+	  },
 ];
 
-module.exports = { usernames, emails, thoughts };
+module.exports = {
+	initialUserData,
+	initialThoughtData,
+	initialReactionData,
+};
