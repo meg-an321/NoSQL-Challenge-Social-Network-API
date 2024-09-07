@@ -20,8 +20,8 @@ router.route('/:thoughtId')
     .delete(deleteThought);
 
 router.route('/:thoughtId/reactions')
+    .delete(deleteReaction)
     .post(createReaction);
-    .delete(deleteReaction);
 
 module.exports = router;
 
