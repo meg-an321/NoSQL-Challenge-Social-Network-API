@@ -1,23 +1,21 @@
 {
-    "name": "NoSQL-Challenge-Social-Network-API",
-    "version": "1.0.0",
-    "description": "Module 18 Bootcamp NoSQL MongoDB - Social Network",
-    "main": "index.js",
-    "license": "MIT",
-    "scripts": {
-      "start": "node index",
-      "dev": "nodemon index",
-      "seed": "node utils/seed"
-    },
-    "dependencies": {
-      "express": "^4.17.1",
-      "eslint": "^8.30.0",
-      "prettier": "^2.8.1",
-      "mongoose": "^6.0.13",
-      "eslint-config-prettier": "^8.5.0",
-      "moment": "^2.29.4"
-    },
-    "devDependencies": {
-      "nodemon": "^2.0.9"
-    }
+  "name": "social-network-api",
+  "version": "1.0.1",
+  "description": "Mongoose back-end project - Develop",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed",
+    "heroku-postbuild": "node utils/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
   }
+}
