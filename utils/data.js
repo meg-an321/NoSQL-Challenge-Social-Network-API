@@ -1,4 +1,4 @@
-const initialUserData = [
+const initialUserData = [ // array of username and email data
 	  {
 		username: 'user1',
 		email: 'user1@example.com',
@@ -13,7 +13,7 @@ const initialUserData = [
 	  },
 ];
 
-const initialThoughtData = [
+const initialThoughtData = [ // array of thoughtText and username data
 	  {
 		thoughtText: 'This is the first thought!',
 		username: 'user1',
@@ -28,7 +28,7 @@ const initialThoughtData = [
 	  },
 ];
 
-const initialReactionData = [
+const initialReactionData = [ // array of reactionBody and username data
 	  {
 		reactionBody: 'This is the first reaction!',
 		username: 'user2',
@@ -43,7 +43,7 @@ const initialReactionData = [
 	  },
 ];
 
-module.exports = {
+module.exports = { 
 	initialUserData,
 	initialThoughtData,
 	initialReactionData,

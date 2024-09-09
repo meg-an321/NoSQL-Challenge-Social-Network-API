@@ -1,3 +1,4 @@
+//add the following code to the file to create the thought controller:
 const { Thought, User } = require('../models');
 
 module.exports = {
@@ -13,10 +14,14 @@ module.exports = {
   // get thougth by id
   getThoughtById(req, res) {
     Thought.findOne({ _id: req.params.id })
+    // .select means that we don't want the __v field to be returned
       .select('-__v')
+      // we use the .then() method to return the thought data
       .then((thought) =>
         !thought
+      // if no thought is found, we return a 404 status code and a message
           ? res.status(404).json({ message: 'No thought found with this id!' })
+      // if a thought is found, we return the thought data
           : res.json(thought))
   },
   // create thought
@@ -67,15 +72,18 @@ module.exports = {
   // delete reaction
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(
+      //_id is the thoughtId 
       { _id: req.params.thoughtId },
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { runValidators: true, new: true }
     )
+    // we use the .then() method to return the updated thought data
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought found with this id!' })
           : res.json(thought)
       )
+      //the .catch() method to return any errors that occur
       .catch(err => res.json(err));
   },
 

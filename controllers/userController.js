@@ -14,10 +14,12 @@ module.exports = {
   getUserById(req, res) {
     User.findOne({ _id: req.params.id })
       .then((user) =>
+        // if no user is found, we return a 404 status code and a message
         !user
           ? res.status(404).json({ message: 'No user found with this id!' })
           : res.json(user)
       )
+      // the catch method is used to handle errors
       .catch(err => res.json(err));
   },
   // create user
@@ -29,8 +31,11 @@ module.exports = {
   // update user
   updateUser(req, res) {
     User.findOneAndUpdate(
+      // _id is the id of the user we want to update
       { _id: req.params.id },
+      // $set is a mongoose method that specifies which field we want to update
       { $set: req.body },
+      // runValidators: true tells mongoose to validate the data
       { runValidators: true, new: true }
     )
       .then((user) =>
